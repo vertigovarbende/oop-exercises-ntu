@@ -1,6 +1,6 @@
 package compositionInheritancePolymorphism.composition.point.myLine;
 
-import compositionInheritancePolymorphism.composition.point.myPointExercise.MyPoint;
+import compositionInheritancePolymorphism.composition.point.myPoint.MyPoint;
 
 public class TestMyLine {
 

@@ -1,4 +1,4 @@
-package compositionInheritancePolymorphism.composition.point.myPointExercise;
+package compositionInheritancePolymorphism.composition.point.myPoint;
 
 import static java.lang.Math.*;
 

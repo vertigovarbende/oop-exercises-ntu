@@ -1,4 +1,4 @@
-package compositionInheritancePolymorphism.composition.point.myPointExercise;
+package compositionInheritancePolymorphism.composition.point.myPoint;
 
 public class TestMyPoint {
 

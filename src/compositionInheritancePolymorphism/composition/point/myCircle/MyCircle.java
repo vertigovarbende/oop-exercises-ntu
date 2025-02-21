@@ -1,7 +1,8 @@
 package compositionInheritancePolymorphism.composition.point.myCircle;
 
-import compositionInheritancePolymorphism.composition.point.myPointExercise.MyPoint;
 import static java.lang.Math.*;
+
+import compositionInheritancePolymorphism.composition.point.myPoint.MyPoint;
 
 public class MyCircle {
 
