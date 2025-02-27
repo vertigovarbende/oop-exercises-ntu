@@ -1,4 +1,4 @@
-package basics.atm;
+package myProjects.atm;
 
 public class Account {
 
