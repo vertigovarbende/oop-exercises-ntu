@@ -1,9 +1,9 @@
-package myProjects.university_v2;
+package myProjects.university.university3;
 
-public class UndergraduateStudent extends Student {
+public class UndergraduateStudent extends AbstractStudent {
 
 	// The protected instance variable
-	protected String minor; 
+	protected String minor;
 
 	// Constructor
 
@@ -13,13 +13,13 @@ public class UndergraduateStudent extends Student {
 		super(no, name, year, dob, major);
 		this.minor = minor;
 	}
-	
+
 	// +study(): void
 	// this method allows the student to work/study
 	@Override
 	public void study() {
 		System.out.print("Undergraduate student ");
-		super.study();
+		System.out.println(name + " student are studying!");
 	}
 
 	// +register(): void
@@ -27,14 +27,12 @@ public class UndergraduateStudent extends Student {
 	@Override
 	public void register() {
 		System.out.print("Undergraduate student ");
-		super.register();
+		System.out.println(name + " student are enrolled to " + major + "!");
 	}
-	
+
 	// toString()
 	@Override
 	public String toString() {
-		return super.toString() + "\n"
-				+ "status: VocationalStudent "
-				+ "minor: " + minor;
+		return super.toString() + "\n" + "status: VocationalStudent " + "minor: " + minor;
 	}
 }

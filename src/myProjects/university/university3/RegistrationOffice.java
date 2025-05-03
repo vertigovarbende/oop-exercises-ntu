@@ -1,4 +1,4 @@
-package myProjects.university_v2;
+package myProjects.university.university3;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -17,8 +17,8 @@ public class RegistrationOffice {
 	}
 
 	// +getAStudent(): Student
-	public Student getAStudent() {
-		Student newStudent = null;
+	public IStudent getAStudent() {
+		IStudent newStudent = null;
 		int randNumber = rand.nextInt(4);
 		switch (randNumber) {
 		case 0:
@@ -29,33 +29,33 @@ public class RegistrationOffice {
 			newStudent = new VocationalStudent(200212, "Pablo", 2021, "04.02.2003", "International Business");
 			break;
 		case 2:
-			newStudent = new MasterStudent(402132, "Joseph", 2021, "21.06.1998", "Mathematic", "Prof. Bella",
-					"Calculus");
+			newStudent = new MasterStudent(402132, "Joseph", 2021, "21.06.1998", "Mathematic", "Calculus",
+					"Prof. Bella");
 			break;
 		case 3:
-			newStudent = new PhdStudent(522642, "Matt", 2021, "11.09.1992", "Physic", "Prof. Bella", "Materials",
-					false);
+			newStudent = new PhdStudent(522642, "Matt", 2021, "11.09.1992", "Physic", "Prof. Bella", "Electric", true);
 			break;
 		}
 		return newStudent;
 	}
 
 	// +registerStudent(newStudent: Student): void
-	public void registerStudent(Student newStudent) {
-		if (newStudent instanceof PhdStudent) {
-			System.out.println("exam? (True/False): ");
-			boolean exam = scan.nextBoolean();
-			if (exam)
-				newStudent.register();
-			else
+	public void registerStudent(IStudent newStudent) {
+		if (newStudent instanceof PhdStudent p) {
+			if (p.isQualifyingExamTaken()) {
+				p.register();
+			} else
 				System.out.println("You cannot register to the school!");
-		} else if (newStudent instanceof MasterStudent) {
+		} else if (newStudent instanceof MasterStudent m) {
 			boolean thesis = scan.nextBoolean();
 			if (thesis)
-				newStudent.register();
+				m.register();
 			else
 				System.out.println("You cannot register to the school!");
-		} else
-			newStudent.register();
+		} else if (newStudent instanceof VocationalStudent v) {
+			v.register();
+		} else if (newStudent instanceof UndergraduateStudent u) {
+			u.register();
+		}
 	}
 }

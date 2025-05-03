@@ -1,4 +1,4 @@
-package myProjects.university_v2;
+package myProjects.university.university2;
 
 public class VocationalStudent extends Student {
 

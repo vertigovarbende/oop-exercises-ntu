@@ -1,4 +1,4 @@
-package myProjects.university_v2;
+package myProjects.university.university2;
 
 public class PhdStudent extends GraduateStudent {
 
@@ -36,17 +36,14 @@ public class PhdStudent extends GraduateStudent {
 		System.out.println("Phd student " + name + " is working on his " + thesis + " thesis ");
 	}
 
-	// +meetWithAdvisor(): void
-	public void meetWithAdvisor() {
-		advisorAvaiable = rand.nextBoolean();
-		if (advisorAvaiable)
-			System.out.println("You can meet advisor now!");
-		else
-			System.out.println("Advisor is not avaiable now! get contact with your advisor to another day!");
-	}
-	
 	// +writePaper(): void
 	public void writePaper() {
 		System.out.println("Phd student " + name + " is working on his " + thesis + " paper ");
+	}
+
+	// toString()
+	@Override
+	public String toString() {
+		return super.toString() + "\n" + "status: PhdStudent " + "advisor: " + advisor + "thesis: " + thesis;
 	}
 }

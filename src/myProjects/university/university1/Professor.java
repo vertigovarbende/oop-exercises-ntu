@@ -1,4 +1,4 @@
-package myProjects.university;
+package myProjects.university.university1;
 
 public class Professor {
 

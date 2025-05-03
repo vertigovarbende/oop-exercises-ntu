@@ -1,4 +1,4 @@
-package myProjects.calculator;
+package myProjects.calculator.calculator1;
 
 public class CalculatorApp {
 
