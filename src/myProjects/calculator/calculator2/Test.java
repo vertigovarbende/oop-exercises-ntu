@@ -4,21 +4,28 @@ import java.util.Scanner;
 
 public class Test {
 
-	private static final Scanner SCAN = new Scanner(System.in);
-	
+	static final Scanner SCAN = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		
+
+		CalculatorX calObj = new CalculatorX(3);
+		calObj.addFunction(new Exp2Function());
+		calObj.addFunction(new Exp3Function());
+		calObj.addFunction(new FibFunction());
+
+		startCalculator(calObj);
 	}
-	
-	private static void startCalculator(Calculator calculator) {
+
+	public static void startCalculator(CalculatorX calculator) {
 		calculator.listMathFunction();
-		System.out.print("Please enter the name of the function (or \"x\" for exit): ");
+		System.out.print("Please enter the name of the function: ");
 		String functionName = SCAN.next();
-		if (functionName.equalsIgnoreCase("x")) {
-			System.out.println("exit!");
+		if (functionName.equalsIgnoreCase("end"))
 			System.exit(0);
-		}
-		System.out.println("Numver of the arguments: ");
-		String argumentCount = SCAN.next();
+		System.out.print("Please enter the arg: ");
+		double arg = SCAN.nextDouble();
+		double result = calculator.doCalculation(functionName, arg);
+		System.out.println(functionName + " of " + arg + " is " + result + "\n");
+		startCalculator(calculator);
 	}
 }

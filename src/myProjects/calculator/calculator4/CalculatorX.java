@@ -1,4 +1,4 @@
-package myProjects.calculator.calculator2;
+package myProjects.calculator.calculator4;
 
 public class CalculatorX implements Calculator {
 
@@ -7,7 +7,6 @@ public class CalculatorX implements Calculator {
 	private int currentCount = 0;
 
 	private MathFunction[] functions;
-	private double argument;
 
 	// Constructor
 	// +CalculatorX(functionCount: int)
@@ -17,34 +16,32 @@ public class CalculatorX implements Calculator {
 	}
 
 	// +addFunction(function: MathFunction)
-	@Override
 	public void addFunction(MathFunction function) {
-		functions[currentCount] = function;
-		currentCount++;
+		if (currentCount != functionCount) {
+			functions[currentCount] = function;
+			++currentCount;
+		} else
+			System.out.println("You can not add function anymore!");
 	}
 
-	// +doCalculation(functionName: String, arg: double)
-	@Override
-	public double doCalculation(String functionName, double arg) {
+	// +listMathFunction(): void
+	public void listMathFunction() {
+		for (MathFunction function : functions)
+			System.out.println(function.getName());
+	}
+
+	// +doCalculation(functionName: String, args: Double...)
+	public double doCalculation(String functionName, double... args) {
 		double result = 0.0;
 		boolean isFunctionFound = false;
 		for (MathFunction function : functions) {
 			if (functionName.equalsIgnoreCase(function.getName())) {
-				result = function.calculate(arg);
+				result = ((NArgMathFunction) function).calculate(args);
 				isFunctionFound = true;
 			}
 		}
 		if (!isFunctionFound)
 			System.out.println("No such function found!");
-
 		return result;
-	}
-
-	// +listMathFunction(): void
-	@Override
-	public void listMathFunction() {
-		System.out.println("Available Functions:");
-		for (MathFunction function : functions)
-			System.out.println(function.getName());
 	}
 }

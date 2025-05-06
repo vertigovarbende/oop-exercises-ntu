@@ -4,13 +4,13 @@ public class Test {
 
 	public static void main(String[] args) {
 		RegistrationOffice reObj = new RegistrationOffice();
-		IStudent studentObj = reObj.getAStudent();
+		AbstractStudent studentObj = reObj.getAStudent();
 		reObj.registerStudent(studentObj);
 		display(studentObj);
 
 	}
 
-	public static void display(IStudent studentObj) {
+	public static void display(AbstractStudent studentObj) {
 		if (studentObj instanceof PhdStudent p) {
 			if (p.isQualifyingExamTaken()) {
 				p.toString();

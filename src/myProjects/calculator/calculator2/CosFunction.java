@@ -1,13 +1,14 @@
 package myProjects.calculator.calculator2;
 
-public class CosFunction extends AbstractMathFunction {
+public class CosFunction implements MathFunction {
 
-	// Constructor
-	public CosFunction() {
-		super("cos");
+	private static String name = "Cos";
+
+	public String getName() {
+		return name;
 	}
-	
-	public double calculate(double... args) {
-		return Math.cos(args[0]);
+
+	public double calculate(double arg) {
+		return Math.cos(arg);
 	}
 }

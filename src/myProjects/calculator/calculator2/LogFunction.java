@@ -1,13 +1,14 @@
 package myProjects.calculator.calculator2;
 
-public class LogFunction extends AbstractMathFunction {
+public class LogFunction implements MathFunction {
 
-	// Constructor
-	public LogFunction() {
-		super("log");
+	private static String name = "Log";
+
+	public String getName() {
+		return name;
 	}
-	
-	public double calculate(double... args) {
-		return Math.log(args[0]);
+
+	public double calculate(double arg) {
+		return Math.log(arg);
 	}
 }

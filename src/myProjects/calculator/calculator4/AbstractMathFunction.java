@@ -1,4 +1,4 @@
-package myProjects.calculator.calculator2;
+package myProjects.calculator.calculator4;
 
 public abstract class AbstractMathFunction implements NArgMathFunction{
 

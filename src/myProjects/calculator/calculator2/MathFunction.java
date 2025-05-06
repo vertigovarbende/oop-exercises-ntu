@@ -2,6 +2,7 @@ package myProjects.calculator.calculator2;
 
 public interface MathFunction {
 
-	String getName();
+	public String getName();
 
+	public double calculate(double arg);
 }

@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class RegistrationOffice {
 
-	// The static variables
-	private static Random rand = new Random();
 	private static Scanner scan = new Scanner(System.in);
 
 	// Constructor
@@ -17,9 +15,9 @@ public class RegistrationOffice {
 	}
 
 	// +getAStudent(): Student
-	public IStudent getAStudent() {
-		IStudent newStudent = null;
-		int randNumber = rand.nextInt(4);
+	public AbstractStudent getAStudent() {
+		AbstractStudent newStudent = null;
+		int randNumber = (int) (Math.random() * 4);
 		switch (randNumber) {
 		case 0:
 			newStudent = new UndergraduateStudent(318200, "Martin", 2022, "03.03.2004", "Computer Science",
@@ -39,14 +37,15 @@ public class RegistrationOffice {
 		return newStudent;
 	}
 
-	// +registerStudent(newStudent: Student): void
-	public void registerStudent(IStudent newStudent) {
+//	 +registerStudent(newStudent: Student): void
+	public void registerStudent(AbstractStudent newStudent) {
 		if (newStudent instanceof PhdStudent p) {
 			if (p.isQualifyingExamTaken()) {
 				p.register();
 			} else
 				System.out.println("You cannot register to the school!");
 		} else if (newStudent instanceof MasterStudent m) {
+			System.out.print("thesis (true/false): ");
 			boolean thesis = scan.nextBoolean();
 			if (thesis)
 				m.register();
@@ -58,4 +57,5 @@ public class RegistrationOffice {
 			u.register();
 		}
 	}
+
 }

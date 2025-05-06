@@ -1,8 +1,8 @@
 package myProjects.calculator.calculator2;
 
-public class SinFunction implements MathFunction {
+public class Exp2Function implements MathFunction {
 
-	private static String name = "Sin";
+	private static String name = "Exp2";
 
 	@Override
 	public String getName() {
@@ -11,6 +11,7 @@ public class SinFunction implements MathFunction {
 
 	@Override
 	public double calculate(double arg) {
-		return Math.sin(arg);
+		return Math.pow(arg, 2);
 	}
+
 }
